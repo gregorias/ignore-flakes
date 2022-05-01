@@ -1,0 +1,107 @@
+<svg version="1.1" baseProfile="full" width="507.0" height="471.0" viewbox="0 0 507 471" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+	<desc >[&lt;start&gt;st]-&gt;[run command]
+	[run command]-&gt;[&lt;choice&gt;succeeded?]
+	[succeeded?] y-&gt;[return success]
+	[return success] -&gt; [&lt;end&gt;e]
+	[return failure] -&gt; [&lt;end&gt;e]
+	[succeeded?] n -&gt; [&lt;choice&gt;succeeded in the last X days?]
+	[succeeded in the last X days?] y -&gt; [return success]
+	[succeeded in the last X days?] n -&gt; [return failure]</desc>
+	<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="bold" font-style="normal">
+		<g transform="translate(0.5, 0.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
+			<g stroke="transparent" fill="transparent">
+				<rect x="0.0" y="0.0" height="471.0" width="507.0" stroke="none"></rect>
+			</g>
+			<g transform="translate(8, 8)" fill="#33322E">
+				<g transform="translate(20, 20)" fill="#33322E" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
+					<path d="M156.5 30.0 L156.5 50 L156.5 63.333333333333336 L156.5 63.3 " fill="none"></path>
+					<path d="M151.2 56.7 L156.5 63.3 L161.8 56.7 L156.5 70.0 Z"></path>
+					<path d="M156.5 101.0 L156.5 121 L156.5 134.33333333333334 L156.5 134.3 " fill="none"></path>
+					<path d="M151.2 127.7 L156.5 134.3 L161.8 127.7 L156.5 141.0 Z"></path>
+					<text x="104.6" y="207.5" stroke="none">y</text>
+					<path d="M96.6 187.5 L45 207.5 L45 250.75 L45 250.75 L45 294 L45 294 L52.995314074197644 308.1916824817008 L53.0 308.2 " fill="none"></path>
+					<path d="M45.1 305.0 L53.0 308.2 L54.4 299.8 L56.3 314.0 Z"></path>
+					<path d="M65.0 345.0 L65 365 L135.27332166459897 391.8805055547647 L135.3 391.9 " fill="none"></path>
+					<path d="M127.1 394.5 L135.3 391.9 L131.0 384.5 L141.5 394.3 Z"></path>
+					<path d="M288.0 345.0 L288 365 L177.94237867876828 394.29290301325557 L177.9 394.3 " fill="none"></path>
+					<path d="M183.0 387.4 L177.9 394.3 L185.8 397.7 L171.5 396.0 Z"></path>
+					<text x="198.7" y="207.5" stroke="none">n</text>
+					<path d="M216.4 187.5 L268 207.5 L268 220.83333333333334 L268.0 220.8 " fill="none"></path>
+					<path d="M262.7 214.2 L268.0 220.8 L273.3 214.2 L268.0 227.5 Z"></path>
+					<text x="226.8" y="294.0" stroke="none">y</text>
+					<path d="M218.8 274.0 L176.5 294 L120.03556289850802 311.9774665211028 L120.0 312.0 " fill="none"></path>
+					<path d="M124.8 304.9 L120.0 312.0 L128.0 315.0 L113.7 314.0 Z"></path>
+					<text x="261.0" y="294.0" stroke="none">n</text>
+					<path d="M278.8 274.0 L288 294 L288 307.3333333333333 L288.0 307.3 " fill="none"></path>
+					<path d="M282.7 300.7 L288.0 307.3 L293.3 300.7 L288.0 314.0 Z"></path>
+					<g data-name="st">
+						<g fill="#33322E" stroke="#33322E" data-name="st">
+							<circle r="12.0" cx="156.5" cy="15.0" stroke="none" data-name="st"></circle>
+						</g>
+					</g>
+					<g data-name="run command">
+						<g fill="#eee8d5" stroke="#33322E" data-name="run command">
+							<rect x="96.0" y="70.0" height="31.0" width="122.0" data-name="run command"></rect>
+						</g>
+						<g transform="translate(96, 70)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="run command">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="run command">
+								<text x="53.0" y="13.5" stroke="none" text-anchor="middle" data-name="run command">run command</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="succeeded?">
+						<g fill="#eee8d5" stroke="#33322E" data-name="succeeded?">
+							<path d="M156.5 141.0 L238.0 164.3 L156.5 187.5 L76.0 164.3 Z" data-name="succeeded?"></path>
+						</g>
+						<g transform="translate(103, 148.75)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="succeeded?">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="succeeded?">
+								<text x="46.0" y="13.5" stroke="none" text-anchor="middle" data-name="succeeded?">succeeded?</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="return success">
+						<g fill="#eee8d5" stroke="#33322E" data-name="return success">
+							<rect x="0.0" y="314.0" height="31.0" width="130.0" data-name="return success"></rect>
+						</g>
+						<g transform="translate(0, 314)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="return success">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="return success">
+								<text x="57.0" y="13.5" stroke="none" text-anchor="middle" data-name="return success">return success</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="e">
+						<g fill="#33322E" stroke="#33322E" data-name="e">
+							<circle r="10.0" cx="156.5" cy="400.0" data-name="e"></circle>
+							<circle r="6.0" cx="156.5" cy="400.0" stroke="none" data-name="e"></circle>
+						</g>
+					</g>
+					<g data-name="return failure">
+						<g fill="#eee8d5" stroke="#33322E" data-name="return failure">
+							<rect x="231.0" y="314.0" height="31.0" width="115.0" data-name="return failure"></rect>
+						</g>
+						<g transform="translate(231, 314)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="return failure">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="return failure">
+								<text x="49.5" y="13.5" stroke="none" text-anchor="middle" data-name="return failure">return failure</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="succeeded in the last X days?">
+						<g fill="#eee8d5" stroke="#33322E" data-name="succeeded in the last X days?">
+							<path d="M268.0 228.0 L451.0 250.8 L268.0 274.5 L85.0 250.8 Z" data-name="succeeded in the last X days?"></path>
+						</g>
+						<g transform="translate(146, 235.75)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="succeeded in the last X days?">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="succeeded in the last X days?">
+								<text x="114.0" y="13.5" stroke="none" text-anchor="middle" data-name="succeeded in the last X days?">succeeded in the last X days?</text>
+								
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>
