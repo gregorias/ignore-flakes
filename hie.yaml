@@ -1,0 +1,13 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "tolerate-fresh-failures:lib"
+
+    - path: "./app/Main.hs"
+      component: "tolerate-fresh-failures:exe:tolerate-fresh-failures"
+
+    - path: "./app/Paths_hledupt.hs"
+      component: "tolerate-fresh-failures:exe:tolerate-fresh-failures"
+
+    - path: "./test"
+      component: "tolerate-fresh-failures:test:tolerate-fresh-failures-test"

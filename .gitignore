@@ -1,0 +1,6 @@
+.stack-work/
+*~
+*.hie
+
+# NPM
+node_modules
