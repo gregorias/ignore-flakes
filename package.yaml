@@ -79,6 +79,8 @@ library:
   source-dirs: src
   ghc-options:
   - -Wunused-packages
+  dependencies:
+  - optparse-applicative
 
 executables:
   tolerate-fresh-failures:
@@ -105,3 +107,8 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     - -Wunused-packages
+    dependencies:
+    - hspec
+    - hspec-expectations-pretty-diff
+    - tolerate-fresh-failures
+    - optparse-applicative
