@@ -13,16 +13,19 @@ import Options.Applicative (
   header,
   helper,
   info,
+  long,
   metavar,
   progDesc,
   str,
+  strOption,
  )
 import Relude
 
-newtype Program = Program
-  { cmdArgs :: [String]
+data Program = Program
+  { markfile :: !FilePath
+  , cmdArgs :: [String]
   }
-  deriving newtype (Eq, Show)
+  deriving stock (Eq, Show)
 
 main :: IO ()
 main = do
@@ -39,7 +42,13 @@ programInfo =
     )
 
 exec :: Program -> IO ()
-exec (Program cmdArgs') = print cmdArgs'
+exec (Program{markfile = _, cmdArgs = cmdArgs'}) = print cmdArgs'
 
 programP :: Parser Program
-programP = Program <$> some (argument str (metavar "CMD..."))
+programP =
+  Program
+    <$> markfileP
+    <*> some (argument str (metavar "CMD..."))
+
+markfileP :: Parser FilePath
+markfileP = strOption (long "markfile" <> metavar "FILENAME")

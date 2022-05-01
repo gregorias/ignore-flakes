@@ -1,4 +1,4 @@
-module Test.Main (
+module Test.Lib (
   tests,
 ) where
 
@@ -21,8 +21,20 @@ tests = do
   Hspec.describe "Lib" $ do
     Hspec.describe "programInfo" $ do
       Hspec.it "parses a command to run" $ do
-        getParseResult (execParser ["--", "hello", "--world"])
-          `shouldBe` Just (Program ["hello", "--world"])
+        getParseResult
+          ( execParser
+              [ "--markfile=/var/spool/last-job.txt"
+              , "--"
+              , "hello"
+              , "--world"
+              ]
+          )
+          `shouldBe` Just
+            ( Program
+                { markfile = "/var/spool/last-job.txt"
+                , cmdArgs = ["hello", "--world"]
+                }
+            )
 
 execParser :: [String] -> ParserResult Program
 execParser = execParserPure emptyPrefs programInfo
