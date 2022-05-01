@@ -1,6 +1,6 @@
-name:                tolerate-fresh-failures
+name:                ignore-flakes
 version:             0.1.0.0
-github:              "gregorias/tolerate-fresh-failures"
+github:              "gregorias/ignore-flakes"
 license:             AGPL-3
 author:              "Grzegorz Milka"
 maintainer:          "grzegorzmilka@gmail.com"
@@ -16,7 +16,7 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/gregorias/tolerate-fresh-failures#readme>
+description:         Please see the README on GitHub at <https://github.com/gregorias/ignore-flakes#readme>
 
 # Some defaults recommended by https://kowainik.github.io/posts/2019-02-06-style-guide#default-extensions
 # Also use Relude
@@ -83,7 +83,7 @@ library:
   - optparse-applicative
 
 executables:
-  tolerate-fresh-failures:
+  ignore-flakes:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -92,14 +92,14 @@ executables:
     - -with-rtsopts=-N
     - -Wunused-packages
     dependencies:
-    - tolerate-fresh-failures
+    - ignore-flakes
     # Fix https://stackoverflow.com/questions/67519851/multiple-files-use-the-same-module-name
     when:
     - condition: false
-      other-modules: Paths_tolerate-fresh-failures
+      other-modules: Paths_ignore-flakes
 
 tests:
-  tolerate-fresh-failures-test:
+  ignore-flakes-test:
     main:                Main.hs
     source-dirs:         test
     ghc-options:
@@ -110,5 +110,5 @@ tests:
     dependencies:
     - hspec
     - hspec-expectations-pretty-diff
-    - tolerate-fresh-failures
+    - ignore-flakes
     - optparse-applicative

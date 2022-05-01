@@ -35,7 +35,7 @@ programInfo =
     (programP <**> helper)
     ( fullDesc
         <> progDesc "Run a command but ignore flakes"
-        <> header "tolerate-fresh-failures -- ignore flakes"
+        <> header "ignore-flakes -- ignore flakes"
     )
 
 exec :: Program -> IO ()

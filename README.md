@@ -1,8 +1,8 @@
-# tolerate-fresh-failures
+# ignore-flakes
 
 UNDER DEVELOPMENT
 
-![activity flow](./readme-assets/tolerate-fresh-failures-flow.svg)
+![activity flow](./readme-assets/ignore-flakes-flow.svg)
 
 A command envelope that tracks a repeated command's successes, and ignores
 command failures if the command has succeed recently.

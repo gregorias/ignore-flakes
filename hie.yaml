@@ -1,13 +1,13 @@
 cradle:
   stack:
     - path: "./src"
-      component: "tolerate-fresh-failures:lib"
+      component: "ignore-flakes:lib"
 
     - path: "./app/Main.hs"
-      component: "tolerate-fresh-failures:exe:tolerate-fresh-failures"
+      component: "ignore-flakes:exe:ignore-flakes"
 
     - path: "./app/Paths_hledupt.hs"
-      component: "tolerate-fresh-failures:exe:tolerate-fresh-failures"
+      component: "ignore-flakes:exe:ignore-flakes"
 
     - path: "./test"
-      component: "tolerate-fresh-failures:test:tolerate-fresh-failures-test"
+      component: "ignore-flakes:test:ignore-flakes-test"
