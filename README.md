@@ -16,13 +16,19 @@ This section is intended for developers. It describes development related matter
 
 ### Dev environment setup
 
-1. To install some development tools (commitlint), set up npm:
+1. Install hlint and fourmolu, which are used in pre-commits:
+
+   ```shell
+   stack install hlint fourmolu
+   ```
+
+2. To install some development tools (commitlint), set up npm:
 
    ```shell
    npm install
    ```
 
-2. To setup Git hooks, install lefthook:
+3. To setup Git hooks, install lefthook:
 
    ```shell
    lefthook install
