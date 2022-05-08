@@ -16,7 +16,6 @@ import Options.Applicative (
   getParseResult,
   prefs,
  )
-import Relude
 import qualified Test.Hspec as Hspec
 import Test.Hspec.Expectations.Pretty (shouldBe)
 

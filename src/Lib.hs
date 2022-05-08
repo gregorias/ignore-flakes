@@ -4,6 +4,7 @@ module Lib (
   Program (..),
 ) where
 
+import Control.Applicative (some, (<**>))
 import Data.Time.Clock (
   DiffTime,
   secondsToDiffTime,
@@ -25,7 +26,6 @@ import Options.Applicative (
   str,
   strOption,
  )
-import Relude
 
 data Program = Program
   { -- | the file storing the last successful execution
