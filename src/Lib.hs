@@ -51,7 +51,7 @@ programInfo =
     )
 
 exec :: Program -> IO ()
-exec (Program{markfile = _, cmdArgs = cmdArgs'}) = print cmdArgs'
+exec (Program{markfile = _, flakeDurationTolerance = _, cmdArgs = cmdArgs'}) = print cmdArgs'
 
 programP :: Parser Program
 programP =
