@@ -36,6 +36,7 @@ library
       base >=4.13 && <5
     , optparse-applicative
     , relude
+    , time
   default-language: Haskell2010
 
 executable ignore-flakes
@@ -71,4 +72,5 @@ test-suite ignore-flakes-test
     , ignore-flakes
     , optparse-applicative
     , relude
+    , time
   default-language: Haskell2010

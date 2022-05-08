@@ -81,6 +81,7 @@ library:
   - -Wunused-packages
   dependencies:
   - optparse-applicative
+  - time
 
 executables:
   ignore-flakes:
@@ -112,3 +113,4 @@ tests:
     - hspec-expectations-pretty-diff
     - ignore-flakes
     - optparse-applicative
+    - time

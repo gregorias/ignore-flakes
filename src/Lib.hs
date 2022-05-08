@@ -4,10 +4,15 @@ module Lib (
   Program (..),
 ) where
 
+import Data.Time.Clock (
+  DiffTime,
+  secondsToDiffTime,
+ )
 import Options.Applicative (
   Parser,
   ParserInfo,
   argument,
+  auto,
   execParser,
   fullDesc,
   header,
@@ -15,6 +20,7 @@ import Options.Applicative (
   info,
   long,
   metavar,
+  option,
   progDesc,
   str,
   strOption,
@@ -22,7 +28,10 @@ import Options.Applicative (
 import Relude
 
 data Program = Program
-  { markfile :: !FilePath
+  { -- | the file storing the last successful execution
+    markfile :: !FilePath
+  , -- | how long this library should mask flakes
+    flakeDurationTolerance :: DiffTime
   , cmdArgs :: [String]
   }
   deriving stock (Eq, Show)
@@ -48,7 +57,16 @@ programP :: Parser Program
 programP =
   Program
     <$> markfileP
+    <*> flakeDurationToleranceP
     <*> some (argument str (metavar "CMD..."))
 
 markfileP :: Parser FilePath
 markfileP = strOption (long "markfile" <> metavar "FILENAME")
+
+flakeDurationToleranceP :: Parser DiffTime
+flakeDurationToleranceP =
+  daysToDiffTime
+    <$> option auto (long "flake-duration-tolerance-days" <> metavar "INT")
+ where
+  daysToDiffTime :: Integer -> DiffTime
+  daysToDiffTime = secondsToDiffTime . (* (24 * 60 * 60))
