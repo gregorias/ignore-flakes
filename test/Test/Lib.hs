@@ -3,10 +3,11 @@ module Test.Lib (
 ) where
 
 import Data.Time.Clock (
-  DiffTime,
-  secondsToDiffTime,
+  NominalDiffTime,
+  secondsToNominalDiffTime,
  )
 import Lib (
+  Command (Command),
   Program (..),
   programInfo,
  )
@@ -24,7 +25,7 @@ tests = do
   Hspec.describe "Lib" $ do
     Hspec.describe "programInfo" $ do
       Hspec.it "parses a command to run" $ do
-        let (twoDays :: DiffTime) = secondsToDiffTime (2 * 24 * 60 * 60)
+        let (twoDays :: NominalDiffTime) = secondsToNominalDiffTime $ fromInteger (2 * 24 * 60 * 60)
         getParseResult
           ( execParser
               [ "--markfile=/var/spool/last-job.txt"
@@ -38,7 +39,7 @@ tests = do
             ( Program
                 { markfile = "/var/spool/last-job.txt"
                 , flakeDurationTolerance = twoDays
-                , cmdArgs = ["hello", "--world"]
+                , cmd = Command "hello" ["--world"]
                 }
             )
 

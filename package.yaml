@@ -1,5 +1,5 @@
 name:                ignore-flakes
-version:             0.1.0.0
+version:             1.0.0.0
 github:              "gregorias/ignore-flakes"
 license:             AGPL-3
 author:              "Grzegorz Milka"
@@ -78,7 +78,11 @@ library:
   - -Wunused-packages
   dependencies:
   - optparse-applicative
+  - text
   - time
+  - transformers
+  - turtle
+
 
 executables:
   ignore-flakes:
