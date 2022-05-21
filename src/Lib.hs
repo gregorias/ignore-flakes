@@ -26,6 +26,7 @@ import Options.Applicative (
   metavar,
   option,
   progDesc,
+  short,
   str,
   strOption,
  )
@@ -60,12 +61,12 @@ programP =
     <*> commandP
 
 markfileP :: Parser Turtle.FilePath
-markfileP = strOption (long "markfile" <> metavar "FILENAME")
+markfileP = strOption (long "markfile" <> short 'm' <> metavar "FILENAME")
 
 flakeDurationToleranceP :: Parser NominalDiffTime
 flakeDurationToleranceP =
   daysToDiffTime
-    <$> option auto (long "flake-duration-tolerance-days" <> metavar "INT")
+    <$> option auto (long "flake-duration-tolerance-days" <> short 't' <> metavar "INT")
  where
   daysToDiffTime :: Integer -> NominalDiffTime
   daysToDiffTime = secondsToNominalDiffTime . fromInteger . (* (24 * 60 * 60))
