@@ -8,6 +8,13 @@ command failures if the command has succeeded recently.
 It is useful for commands that are flaky and are required to succeed only
 ocassionally.
 
+## Installation
+
+```
+stack install
+```
+
+
 ## Development
 
 This section is intended for developers. It describes development related matters.
