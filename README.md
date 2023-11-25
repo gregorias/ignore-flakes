@@ -27,13 +27,7 @@ This section is intended for developers. It describes development related matter
    stack install hlint fourmolu
    ```
 
-2. To install some development tools (commitlint), set up npm:
-
-   ```shell
-   npm install
-   ```
-
-3. To setup Git hooks, install lefthook:
+2. To setup Git hooks, install lefthook:
 
    ```shell
    lefthook install
