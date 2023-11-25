@@ -11,6 +11,7 @@ import Control.Monad.Trans.Maybe (MaybeT, runMaybeT)
 import Data.Maybe (fromJust, listToMaybe)
 import Data.String (IsString (fromString))
 import Data.Text (unpack)
+import qualified Data.Text.IO as T
 import Data.Time (UTCTime)
 import Data.Time.Format.ISO8601 (Format (formatShowM), ISO8601 (iso8601Format), formatReadP)
 import Text.ParserCombinators.ReadP (readP_to_S)
@@ -37,7 +38,7 @@ mkFilebasedMark base writeTime = LastSuccessMark readMark writeMark
   -- work that shouldn't happen.
   formattedWriteTime = fromString . fromJust $ formatShowM iso8601Format writeTime
   readMark = runMaybeT $ do
-    contents <- foo (try @SomeException (Turtle.readTextFile base))
+    contents <- foo (try @SomeException (T.readFile base))
     let utcTimeP = formatReadP iso8601Format
         readS = readP_to_S utcTimeP (unpack contents)
     (utcTime, _) <- maybe empty return (listToMaybe readS)
@@ -51,5 +52,6 @@ mkFilebasedMark base writeTime = LastSuccessMark readMark writeMark
         return
         aOrE
 
+  writeMark :: IO ()
   writeMark = do
-    Turtle.writeTextFile base formattedWriteTime
+    T.writeFile base formattedWriteTime
