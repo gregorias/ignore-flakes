@@ -10,6 +10,10 @@ function get-version
     end
 end
 
+function is-macos
+    uname -s | grep -q Darwin
+end
+
 set OLD_VERSION (get-version)
 
 echo "Bump up the new version in package.yaml. Once done, confirm [y/n]":
@@ -27,7 +31,7 @@ and echo "New version: $NEW_VERSION."
 
 git add package.yaml
 and echo "Rebuilding to update the Cabal file."
-and stack build --fast
+and stack build
 and git add *.cabal
 and echo "Committing the new version."
 and git commit -m "chore: release v$NEW_VERSION"
@@ -35,3 +39,13 @@ and git push
 and echo "Tagging the new version."
 and git tag v$NEW_VERSION
 and git push origin v$NEW_VERSION
+or exit 1
+
+if not is-macos
+    echo "Not on macOS. Skipping the GitHub release."
+    exit 1
+end
+
+cp (stack path --local-install-root)/bin/ignore-flakes ignore-flakes-macos
+and gh release create "v$NEW_VERSION" ignore-flakes-macos
+rm ignore-flakes-macos

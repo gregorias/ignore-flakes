@@ -27,6 +27,7 @@ artifacts:
 
 - A tag of the form `v1.0.0.0` on a commit with a `package.yaml` with the same
   version string.
+- A GitHub release containing a macOs binary.
 
 To make a release, use a helper script: `./dev/bin/release-new-version`.
 
