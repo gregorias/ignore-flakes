@@ -10,7 +10,7 @@ extra-source-files:
 - README.md
 
 # Metadata used when publishing your package
-# synopsis:            Short description of your package
+synopsis:            A command envelope that masks flakes.
 # category:            Web
 
 # To avoid duplicated efforts in documentation and dealing with the
@@ -18,49 +18,34 @@ extra-source-files:
 # common to point users to the README.md file.
 description:         Please see the README on GitHub at <https://github.com/gregorias/ignore-flakes#readme>
 
-# Some defaults recommended by https://kowainik.github.io/posts/2019-02-06-style-guide#default-extensions
+language: GHC2021
+
 default-extensions:
-  BangPatterns
   DataKinds
-  DeriveDataTypeable
-  DeriveFoldable
-  DeriveFunctor
-  DeriveGeneric
-  DeriveTraversable
   DerivingStrategies
   DerivingVia
   DuplicateRecordFields
-  FlexibleContexts
-  FlexibleInstances
   FunctionalDependencies
   GADTs
-  GeneralisedNewtypeDeriving
-  InstanceSigs
   LambdaCase
-  MultiParamTypeClasses
   MultiWayIf
-  NumericUnderscores
   OverloadedLabels
-  OverloadedLists
   OverloadedStrings
-  PatternSynonyms
-  QuasiQuotes
-  ScopedTypeVariables
-  StandaloneDeriving
-  TupleSections
-  TypeApplications
   TypeFamilies
   TypeOperators
-  UnicodeSyntax
-  ViewPatterns
 
 dependencies:
-- base >= 4.13 && < 5
+- base >= 4.17 && < 5
 
 # no-type-defaults, this is dangerous, but in terms of convenience it's so
 # useful to use ExtendedDefaultRules that I keep it.
+#
+# no-name-shadowing: Name shadowing is potentially dangerous, but not having it
+# forces me to figure out alternative names, which can make code less readable.
+# Overall, I think it's worth the trade off to enable name shadowing.
 ghc-options:
   - -Wall
+  - -Werror
   - -Wcompat
   - -Wmissing-deriving-strategies
   - -Widentities
@@ -71,6 +56,7 @@ ghc-options:
   - -Wredundant-constraints
   - -Wno-type-defaults
   - -Wno-partial-type-signatures
+  - -Wno-name-shadowing
 
 library:
   source-dirs: src
