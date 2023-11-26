@@ -20,4 +20,14 @@ To build the binary, run
 stack build
 ```
 
+## Releasing
+
+A release has a specific version (e.g., `1.0.0.0`) consists of the following
+artifacts:
+
+- A tag of the form `v1.0.0.0` on a commit with a `package.yaml` with the same
+  version string.
+
+To make a release, use a helper script: `./dev/bin/release-new-version`.
+
 [Stack]: https://docs.haskellstack.org/en/stable/
