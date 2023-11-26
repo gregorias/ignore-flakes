@@ -12,7 +12,7 @@ end
 
 set OLD_VERSION (get-version)
 
-echo "Bump up the new version in app/Main and package.yaml. Once done, confirm [y/n]":
+echo "Bump up the new version in package.yaml. Once done, confirm [y/n]":
 read confirm
 switch $confirm
     case y

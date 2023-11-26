@@ -5,7 +5,7 @@ cabal-version: 1.12
 -- see: https://github.com/sol/hpack
 
 name:           ignore-flakes
-version:        1.0.0.0
+version:        1.1.0.0
 synopsis:       A command envelope that masks flakes.
 description:    Please see the README on GitHub at <https://github.com/gregorias/ignore-flakes#readme>
 homepage:       https://github.com/gregorias/ignore-flakes#readme
@@ -33,7 +33,18 @@ library
   hs-source-dirs:
       src
   default-extensions:
-      DataKinds DerivingStrategies DerivingVia DuplicateRecordFields FunctionalDependencies GADTs LambdaCase MultiWayIf OverloadedLabels OverloadedStrings TypeFamilies TypeOperators
+      DataKinds
+      DerivingStrategies
+      DerivingVia
+      DuplicateRecordFields
+      FunctionalDependencies
+      GADTs
+      LambdaCase
+      MultiWayIf
+      OverloadedLabels
+      OverloadedStrings
+      TypeFamilies
+      TypeOperators
   ghc-options: -Wall -Werror -Wcompat -Wmissing-deriving-strategies -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wpartial-fields -Wredundant-constraints -Wno-type-defaults -Wno-partial-type-signatures -Wno-name-shadowing -Wunused-packages
   build-depends:
       base >=4.17 && <5
@@ -51,7 +62,18 @@ executable ignore-flakes
   hs-source-dirs:
       app
   default-extensions:
-      DataKinds DerivingStrategies DerivingVia DuplicateRecordFields FunctionalDependencies GADTs LambdaCase MultiWayIf OverloadedLabels OverloadedStrings TypeFamilies TypeOperators
+      DataKinds
+      DerivingStrategies
+      DerivingVia
+      DuplicateRecordFields
+      FunctionalDependencies
+      GADTs
+      LambdaCase
+      MultiWayIf
+      OverloadedLabels
+      OverloadedStrings
+      TypeFamilies
+      TypeOperators
   ghc-options: -Wall -Werror -Wcompat -Wmissing-deriving-strategies -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wpartial-fields -Wredundant-constraints -Wno-type-defaults -Wno-partial-type-signatures -Wno-name-shadowing -threaded -rtsopts -with-rtsopts=-N -Wunused-packages
   build-depends:
       base >=4.17 && <5
@@ -68,7 +90,18 @@ test-suite ignore-flakes-test
   hs-source-dirs:
       test
   default-extensions:
-      DataKinds DerivingStrategies DerivingVia DuplicateRecordFields FunctionalDependencies GADTs LambdaCase MultiWayIf OverloadedLabels OverloadedStrings TypeFamilies TypeOperators
+      DataKinds
+      DerivingStrategies
+      DerivingVia
+      DuplicateRecordFields
+      FunctionalDependencies
+      GADTs
+      LambdaCase
+      MultiWayIf
+      OverloadedLabels
+      OverloadedStrings
+      TypeFamilies
+      TypeOperators
   ghc-options: -Wall -Werror -Wcompat -Wmissing-deriving-strategies -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wpartial-fields -Wredundant-constraints -Wno-type-defaults -Wno-partial-type-signatures -Wno-name-shadowing -threaded -rtsopts -with-rtsopts=-N -Wunused-packages
   build-depends:
       base >=4.17 && <5

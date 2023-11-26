@@ -1,41 +1,41 @@
-name:                ignore-flakes
-version:             1.0.0.0
-github:              "gregorias/ignore-flakes"
-license:             AGPL-3
-author:              "Grzegorz Milka"
-maintainer:          "grzegorzmilka@gmail.com"
-copyright:           "Copyright (c) 2022-2023 Grzegorz Milka"
+name: ignore-flakes
+version: 1.1.0.0
+github: "gregorias/ignore-flakes"
+license: AGPL-3
+author: "Grzegorz Milka"
+maintainer: "grzegorzmilka@gmail.com"
+copyright: "Copyright (c) 2022-2023 Grzegorz Milka"
 
 extra-source-files:
-- README.md
+  - README.md
 
 # Metadata used when publishing your package
-synopsis:            A command envelope that masks flakes.
+synopsis: A command envelope that masks flakes.
 # category:            Web
 
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/gregorias/ignore-flakes#readme>
+description: Please see the README on GitHub at <https://github.com/gregorias/ignore-flakes#readme>
 
 language: GHC2021
 
 default-extensions:
-  DataKinds
-  DerivingStrategies
-  DerivingVia
-  DuplicateRecordFields
-  FunctionalDependencies
-  GADTs
-  LambdaCase
-  MultiWayIf
-  OverloadedLabels
-  OverloadedStrings
-  TypeFamilies
-  TypeOperators
+  - DataKinds
+  - DerivingStrategies
+  - DerivingVia
+  - DuplicateRecordFields
+  - FunctionalDependencies
+  - GADTs
+  - LambdaCase
+  - MultiWayIf
+  - OverloadedLabels
+  - OverloadedStrings
+  - TypeFamilies
+  - TypeOperators
 
 dependencies:
-- base >= 4.17 && < 5
+  - base >= 4.17 && < 5
 
 # no-type-defaults, this is dangerous, but in terms of convenience it's so
 # useful to use ExtendedDefaultRules that I keep it.
@@ -61,43 +61,42 @@ ghc-options:
 library:
   source-dirs: src
   ghc-options:
-  - -Wunused-packages
+    - -Wunused-packages
   dependencies:
-  - optparse-applicative
-  - text
-  - time
-  - transformers
-  - turtle
-
+    - optparse-applicative
+    - text
+    - time
+    - transformers
+    - turtle
 
 executables:
   ignore-flakes:
-    main:                Main.hs
-    source-dirs:         app
+    main: Main.hs
+    source-dirs: app
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    - -Wunused-packages
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+      - -Wunused-packages
     dependencies:
-    - ignore-flakes
+      - ignore-flakes
     # Fix https://stackoverflow.com/questions/67519851/multiple-files-use-the-same-module-name
     when:
-    - condition: false
-      other-modules: Paths_ignore-flakes
+      - condition: false
+        other-modules: Paths_ignore-flakes
 
 tests:
   ignore-flakes-test:
-    main:                Main.hs
-    source-dirs:         test
+    main: Main.hs
+    source-dirs: test
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    - -Wunused-packages
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+      - -Wunused-packages
     dependencies:
-    - hspec
-    - hspec-expectations-pretty-diff
-    - ignore-flakes
-    - optparse-applicative
-    - time
+      - hspec
+      - hspec-expectations-pretty-diff
+      - ignore-flakes
+      - optparse-applicative
+      - time
