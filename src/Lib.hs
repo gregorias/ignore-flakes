@@ -10,7 +10,14 @@ module Lib (
 import Command (Command (..), runCommandStrict)
 import Control.Applicative (many, (<**>))
 import Data.Text.IO (hPutStrLn)
-import Data.Time (NominalDiffTime, UTCTime, diffUTCTime, getCurrentTime, secondsToNominalDiffTime)
+import Data.Time (
+  NominalDiffTime,
+  UTCTime,
+  diffUTCTime,
+  getCurrentTime,
+  secondsToNominalDiffTime,
+ )
+import Data.Version (showVersion)
 import LastSuccessMark (LastSuccessMark (..), mkFilebasedMark)
 import Options.Applicative (
   Parser,
@@ -27,9 +34,11 @@ import Options.Applicative (
   option,
   progDesc,
   short,
+  simpleVersioner,
   str,
   strOption,
  )
+import Paths_ignore_flakes (version)
 import System.Exit (ExitCode (..))
 import System.IO (stderr)
 import Turtle (FilePath, exit)
@@ -47,7 +56,7 @@ data Program = Program
 programInfo :: ParserInfo Program
 programInfo =
   info
-    (programP <**> helper)
+    (programP <**> helper <**> simpleVersioner (showVersion version))
     ( fullDesc
         <> progDesc "Run a command but ignore flakes"
         <> header "ignore-flakes -- ignore flakes"

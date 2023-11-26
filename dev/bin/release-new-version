@@ -1,0 +1,37 @@
+#!/usr/bin/env fish
+#
+# This script releases a new version of the project.
+
+function get-version
+    stack run -- --version
+    or begin
+        echo "Could not get the current version. Aborting."
+        exit 1
+    end
+end
+
+set OLD_VERSION (get-version)
+
+echo "Bump up the new version in app/Main and package.yaml. Once done, confirm [y/n]":
+read confirm
+switch $confirm
+    case y
+        echo "$confirm"
+    case '*'
+        echo "Aborting due to lack of confirmation (user input was $confirm)."
+        exit 0
+end
+
+set NEW_VERSION (get-version)
+and echo "New version: $NEW_VERSION."
+
+git add package.yaml
+and echo "Rebuilding to update the Cabal file."
+and stack build --fast
+and git add *.cabal
+and echo "Committing the new version."
+and git commit -m "chore: release v$NEW_VERSION"
+and git push
+and echo "Tagging the new version."
+and git tag v$NEW_VERSION
+and git push origin v$NEW_VERSION
