@@ -4,7 +4,7 @@ github:              "gregorias/ignore-flakes"
 license:             AGPL-3
 author:              "Grzegorz Milka"
 maintainer:          "grzegorzmilka@gmail.com"
-copyright:           "Copyright (c) 2022 Grzegorz Milka"
+copyright:           "Copyright (c) 2022-2023 Grzegorz Milka"
 
 extra-source-files:
 - README.md

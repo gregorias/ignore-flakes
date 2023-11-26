@@ -1,6 +1,6 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.34.4.
+-- This file has been generated from package.yaml by hpack version 0.35.2.
 --
 -- see: https://github.com/sol/hpack
 
@@ -11,7 +11,7 @@ homepage:       https://github.com/gregorias/ignore-flakes#readme
 bug-reports:    https://github.com/gregorias/ignore-flakes/issues
 author:         Grzegorz Milka
 maintainer:     grzegorzmilka@gmail.com
-copyright:      Copyright (c) 2022 Grzegorz Milka
+copyright:      Copyright (c) 2022-2023 Grzegorz Milka
 license:        AGPL-3
 license-file:   LICENSE
 build-type:     Simple
