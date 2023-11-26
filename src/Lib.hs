@@ -35,10 +35,10 @@ import System.IO (stderr)
 import Turtle (FilePath, exit)
 
 data Program = Program
-  { -- | the file storing the last successful execution
-    markfile :: !Turtle.FilePath
-  , -- | how long this library should mask flakes
-    flakeDurationTolerance :: !NominalDiffTime
+  { markfile :: !Turtle.FilePath
+  -- ^ the file storing the last successful execution
+  , flakeDurationTolerance :: !NominalDiffTime
+  -- ^ how long this library should mask flakes
   , cmd :: !Command
   }
   deriving stock (Eq, Show)
@@ -72,7 +72,7 @@ flakeDurationToleranceP =
   daysToDiffTime = secondsToNominalDiffTime . fromInteger . (* (24 * 60 * 60))
 
 commandP :: Parser Command
-commandP = (Command <$> (argument str (metavar "CMD")) <*> many (argument str (metavar "ARGS...")))
+commandP = Command <$> argument str (metavar "CMD") <*> many (argument str (metavar "ARGS..."))
 
 -- | Runs the provided command, ignores its flakes, and marks successes.
 ignoreFlakes :: LastSuccessMark -> NominalDiffTime -> UTCTime -> Command -> IO ExitCode

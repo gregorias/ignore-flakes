@@ -11,8 +11,8 @@ pre-commit:
       # We need to provide them separately.
       run: >-
         fourmolu -o "-XTypeApplications"
-                 -o "-XImportQualifiedPost"
-                 -i {staged_files}
+        -o "-XImportQualifiedPost"
+        -i {staged_files}
         && git add {staged_files}
     prettier:
       tags: style
