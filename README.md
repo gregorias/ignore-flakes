@@ -10,33 +10,8 @@ ocassionally.
 
 ## Installation
 
-```
+Build and add `ignore-flakes` executable to `$HOME/.local/bin`:
+
+```bash
 stack install
-```
-
-
-## Development
-
-This section is intended for developers. It describes development related matters.
-
-### Dev environment setup
-
-1. Install hlint and fourmolu, which are used in pre-commits:
-
-   ```shell
-   stack install hlint fourmolu
-   ```
-
-2. To setup Git hooks, install lefthook:
-
-   ```shell
-   lefthook install
-   ```
-
-### Building
-
-To build the binary, run
-
-```
-stack build
 ```
